@@ -89,15 +89,13 @@ img {
 .brand {
   display: flex;
   align-items: center;
-  gap: 18px;
   min-width: 360px;
 }
 
 .brand-logos {
-  display: grid;
-  gap: 7px;
-  width: 174px;
-  flex: 0 0 174px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
 }
 
 .brand-logos img {
@@ -107,32 +105,11 @@ img {
 }
 
 .brand-logos .faculty-logo {
-  width: 150px;
+  width: 166px;
 }
 
 .brand-logos .chc-logo {
   width: 174px;
-}
-
-.logo-divider {
-  display: block;
-  width: 174px;
-  height: 1px;
-  background: rgba(176, 37, 52, 0.28);
-}
-
-.brand-text {
-  display: grid;
-  line-height: 1.2;
-}
-
-.brand strong {
-  font-size: 0.96rem;
-}
-
-.brand small {
-  color: var(--muted);
-  font-size: 0.72rem;
 }
 
 .site-nav {
@@ -901,26 +878,18 @@ details p {
 
   .brand {
     min-width: 0;
-    gap: 10px;
   }
 
   .brand-logos {
-    width: 112px;
-    flex-basis: 112px;
-    gap: 5px;
+    gap: 10px;
   }
 
   .brand-logos .faculty-logo {
-    width: 98px;
-  }
-
-  .brand-logos .chc-logo,
-  .logo-divider {
     width: 112px;
   }
 
-  .brand small {
-    display: none;
+  .brand-logos .chc-logo {
+    width: 118px;
   }
 
   .hero {
