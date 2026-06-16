@@ -89,16 +89,39 @@ img {
 .brand {
   display: flex;
   align-items: center;
-  gap: 14px;
-  min-width: 260px;
+  gap: 18px;
+  min-width: 360px;
 }
 
-.brand img {
-  width: 116px;
+.brand-logos {
+  display: grid;
+  gap: 7px;
+  width: 174px;
+  flex: 0 0 174px;
+}
+
+.brand-logos img {
+  width: 100%;
   height: auto;
+  object-fit: contain;
 }
 
-.brand span {
+.brand-logos .faculty-logo {
+  width: 150px;
+}
+
+.brand-logos .chc-logo {
+  width: 174px;
+}
+
+.logo-divider {
+  display: block;
+  width: 174px;
+  height: 1px;
+  background: rgba(176, 37, 52, 0.28);
+}
+
+.brand-text {
   display: grid;
   line-height: 1.2;
 }
@@ -878,10 +901,22 @@ details p {
 
   .brand {
     min-width: 0;
+    gap: 10px;
   }
 
-  .brand img {
-    width: 92px;
+  .brand-logos {
+    width: 112px;
+    flex-basis: 112px;
+    gap: 5px;
+  }
+
+  .brand-logos .faculty-logo {
+    width: 98px;
+  }
+
+  .brand-logos .chc-logo,
+  .logo-divider {
+    width: 112px;
   }
 
   .brand small {
