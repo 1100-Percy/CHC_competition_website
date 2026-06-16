@@ -95,21 +95,21 @@ img {
 .brand-logos {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 20px;
 }
 
 .brand-logos img {
-  width: 100%;
-  height: auto;
+  height: 54px;
+  width: auto;
   object-fit: contain;
 }
 
 .brand-logos .faculty-logo {
-  width: 166px;
+  height: 54px;
 }
 
 .brand-logos .chc-logo {
-  width: 174px;
+  height: 54px;
 }
 
 .site-nav {
@@ -885,11 +885,11 @@ details p {
   }
 
   .brand-logos .faculty-logo {
-    width: 112px;
+    height: 34px;
   }
 
   .brand-logos .chc-logo {
-    width: 118px;
+    height: 34px;
   }
 
   .hero {
