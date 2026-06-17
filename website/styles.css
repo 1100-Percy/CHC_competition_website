@@ -543,19 +543,12 @@ h3 {
   gap: 14px;
 }
 
-.registration-panel,
 .news-list {
   display: grid;
   max-width: var(--max);
   gap: 14px;
 }
 
-.registration-panel {
-  grid-template-columns: 1fr 1fr minmax(220px, 0.6fr);
-  align-items: stretch;
-}
-
-.registration-panel > div,
 .news-list article {
   padding: 22px;
   border: 1px solid var(--line);
@@ -563,7 +556,6 @@ h3 {
   background: var(--white);
 }
 
-.registration-panel strong,
 .news-list time {
   display: block;
   margin-bottom: 12px;
@@ -571,15 +563,9 @@ h3 {
   font-weight: 700;
 }
 
-.registration-panel p,
 .news-list p {
   margin-bottom: 0;
   color: var(--muted);
-}
-
-.registration-panel .button {
-  min-height: 100%;
-  text-align: center;
 }
 
 .timeline {
@@ -744,6 +730,59 @@ details p {
   border-color: rgba(255, 255, 255, 0.55);
 }
 
+.floating-registration {
+  position: fixed;
+  right: clamp(18px, 3vw, 36px);
+  bottom: clamp(18px, 3vw, 34px);
+  z-index: 30;
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  align-items: stretch;
+  width: min(760px, calc(100vw - 36px));
+  overflow: hidden;
+  border: 1px solid rgba(222, 217, 210, 0.9);
+  border-radius: 8px;
+  background: rgba(251, 250, 247, 0.96);
+  box-shadow: 0 18px 46px rgba(25, 24, 22, 0.16);
+  backdrop-filter: blur(14px);
+}
+
+.floating-registration > div {
+  display: grid;
+  gap: 4px;
+  padding: 16px 18px;
+  border-right: 1px solid var(--line);
+}
+
+.floating-registration span {
+  color: var(--red-dark);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.floating-registration strong {
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: 1.04rem;
+}
+
+.floating-register-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 132px;
+  padding: 16px 20px;
+  background: var(--red);
+  color: var(--white);
+  font-weight: 800;
+  text-align: center;
+}
+
+.floating-register-button:hover,
+.floating-register-button:focus-visible {
+  background: var(--red-dark);
+}
+
 .site-footer {
   padding: clamp(32px, 5vw, 56px) clamp(18px, 4vw, 48px);
   color: var(--muted);
@@ -856,7 +895,6 @@ details p {
   .info-table,
   .stream-grid,
   .resource-layout,
-  .registration-panel,
   .footer-layout {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -912,7 +950,6 @@ details p {
   .timeline li,
   .award-strip,
   .resource-layout,
-  .registration-panel,
   .footer-layout {
     grid-template-columns: 1fr;
   }
@@ -944,7 +981,20 @@ details p {
     grid-template-columns: 72px 1fr;
   }
 
-  .registration-panel .button {
-    min-height: 54px;
+  .floating-registration {
+    right: 10px;
+    bottom: 10px;
+    grid-template-columns: 1fr;
+    width: calc(100vw - 20px);
+  }
+
+  .floating-registration > div {
+    padding: 12px 14px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .floating-register-button {
+    min-height: 52px;
   }
 }
