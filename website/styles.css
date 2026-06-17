@@ -733,7 +733,7 @@ details p {
 .floating-registration {
   position: fixed;
   right: clamp(18px, 3vw, 36px);
-  bottom: clamp(18px, 3vw, 34px);
+  bottom: 0;
   z-index: 30;
   display: grid;
   grid-template-columns: 1fr 1fr auto;
@@ -983,7 +983,7 @@ details p {
 
   .floating-registration {
     right: 10px;
-    bottom: 10px;
+    bottom: 0;
     grid-template-columns: 1fr;
     width: calc(100vw - 20px);
   }
