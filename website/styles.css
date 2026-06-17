@@ -255,8 +255,7 @@ h1 {
   font-size: clamp(1.08rem, 1.8vw, 1.42rem);
 }
 
-.hero-actions,
-.contact-actions {
+.hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
@@ -389,8 +388,7 @@ h1 {
   line-height: 1.2;
 }
 
-.section,
-.contact-section {
+.section {
   max-width: var(--max);
   margin: 0 auto;
   padding: clamp(56px, 8vw, 92px) clamp(18px, 4vw, 36px);
@@ -706,30 +704,6 @@ details p {
   color: var(--muted);
 }
 
-.contact-section {
-  display: grid;
-  grid-template-columns: minmax(260px, 0.55fr) 1fr;
-  gap: clamp(28px, 5vw, 70px);
-  margin-bottom: 32px;
-  border: 1px solid var(--ink);
-  border-radius: 8px;
-  background: var(--ink);
-  color: var(--white);
-}
-
-.contact-section .eyebrow {
-  color: #f0bd55;
-}
-
-.contact-section h2 {
-  margin-bottom: 0;
-  font-size: clamp(2rem, 4vw, 3.9rem);
-}
-
-.contact-section .button {
-  border-color: rgba(255, 255, 255, 0.55);
-}
-
 .floating-registration {
   position: fixed;
   right: clamp(18px, 3vw, 36px);
@@ -788,6 +762,16 @@ details p {
   color: var(--muted);
   border-top: 1px solid var(--line);
   background: #f4f1ec;
+}
+
+.footer-contact {
+  display: grid;
+  gap: 4px;
+  margin-top: 12px;
+}
+
+.footer-contact p {
+  margin: 0;
 }
 
 .back-to-top {
@@ -882,8 +866,7 @@ details p {
 
   .hero,
   .two-column,
-  .split,
-  .contact-section {
+  .split {
     grid-template-columns: 1fr;
   }
 
@@ -968,8 +951,7 @@ details p {
     grid-template-columns: 1fr;
   }
 
-  .hero-actions,
-  .contact-actions {
+  .hero-actions {
     display: grid;
   }
 
