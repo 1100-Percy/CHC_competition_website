@@ -406,14 +406,20 @@ h1 {
 }
 
 .section-heading {
-  display: grid;
-  grid-template-columns: minmax(190px, 0.34fr) minmax(0, 0.66fr);
-  gap: clamp(24px, 5vw, 64px);
-  margin-bottom: 34px;
+  display: block;
+  margin-bottom: 38px;
 }
 
 .section-heading.compact {
   max-width: var(--max);
+}
+
+.section-heading .eyebrow {
+  margin-bottom: 0;
+  color: var(--red);
+  font-size: clamp(1.05rem, 1.45vw, 1.32rem);
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 h2 {
@@ -433,6 +439,60 @@ h3 {
   gap: clamp(24px, 5vw, 60px);
 }
 
+.about-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.34fr) 1fr;
+  gap: clamp(28px, 5vw, 64px);
+  align-items: center;
+}
+
+.about-main {
+  display: grid;
+  align-content: center;
+  min-height: 520px;
+  color: #393533;
+  font-size: clamp(1.32rem, 1.8vw, 1.78rem);
+  line-height: 1.75;
+  text-align: center;
+}
+
+.about-main p:last-child {
+  margin-bottom: 0;
+}
+
+.example-panel {
+  display: grid;
+  gap: 12px;
+}
+
+.example-label {
+  margin: 0;
+  color: var(--red-dark);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.example-grid article {
+  padding: 16px;
+}
+
+.example-grid article span {
+  width: 32px;
+  min-width: 32px;
+  height: 32px;
+  margin-bottom: 12px;
+  padding: 0;
+  font-size: 0.8rem;
+}
+
+.example-grid h3 {
+  font-size: 1rem;
+}
+
+.example-grid p {
+  font-size: 0.92rem;
+}
+
 .two-column > div:first-child {
   color: #393533;
   font-size: 1.04rem;
@@ -440,7 +500,8 @@ h3 {
 
 .direction-grid,
 .stream-grid,
-.resource-layout {
+.resource-layout,
+.forms-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
@@ -448,6 +509,7 @@ h3 {
 
 .direction-grid article,
 .stream-grid article,
+.form-card,
 .resource-block,
 .submission-flow article {
   padding: 20px;
@@ -458,6 +520,7 @@ h3 {
 
 .direction-grid article span,
 .stream-grid article span,
+.form-title span,
 .submission-flow article span {
   display: inline-grid;
   min-width: 38px;
@@ -474,26 +537,63 @@ h3 {
 
 .direction-grid article:nth-child(2) span,
 .stream-grid article:nth-child(2) span,
+.form-card:nth-child(2) .form-title span,
 .submission-flow article:nth-child(2) span {
   background: var(--jade);
 }
 
 .direction-grid article:nth-child(3) span,
 .stream-grid article:nth-child(3) span,
+.form-card:nth-child(3) .form-title span,
 .submission-flow article:nth-child(3) span {
   background: var(--gold);
 }
 
-.direction-grid article:nth-child(4) span {
+.direction-grid article:nth-child(4) span,
+.form-card:nth-child(4) .form-title span {
   background: var(--blue);
 }
 
 .direction-grid p,
 .stream-grid p,
+.form-card p,
 .resource-block p,
 .submission-flow p {
   margin-bottom: 0;
   color: var(--muted);
+}
+
+.form-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.form-title span {
+  margin-bottom: 0;
+  flex: 0 0 auto;
+}
+
+.form-title h3 {
+  margin-bottom: 0;
+}
+
+.form-card p {
+  margin-bottom: 12px;
+}
+
+.form-card p:last-child {
+  margin-bottom: 0;
+}
+
+.form-card strong {
+  color: var(--red-dark);
+}
+
+.form-note,
+.award-notes {
+  margin-top: 14px;
 }
 
 .info-table {
@@ -521,6 +621,16 @@ h3 {
 .info-table p {
   margin-bottom: 0;
   color: #3f3a38;
+}
+
+.plain-list {
+  margin: 0;
+  padding-left: 22px;
+  color: #3f3a38;
+}
+
+.plain-list li + li {
+  margin-top: 8px;
 }
 
 .stream-grid {
@@ -666,7 +776,7 @@ h3 {
 
 .resource-layout {
   max-width: var(--max);
-  grid-template-columns: 1fr 1fr 0.8fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .resource-block ul {
@@ -868,6 +978,7 @@ details p {
   }
 
   .hero,
+  .about-layout,
   .two-column,
   .split {
     grid-template-columns: 1fr;
@@ -879,6 +990,7 @@ details p {
 
   .quick-map,
   .info-table,
+  .forms-grid,
   .stream-grid,
   .resource-layout,
   .footer-layout {
@@ -931,6 +1043,7 @@ details p {
 
   .quick-map,
   .direction-grid,
+  .forms-grid,
   .info-table,
   .stream-grid,
   .timeline li,
